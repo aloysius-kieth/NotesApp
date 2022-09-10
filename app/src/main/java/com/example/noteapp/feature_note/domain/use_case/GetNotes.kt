@@ -7,6 +7,7 @@ import com.example.noteapp.feature_note.domain.util.OrderType
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
+
 class GetNotes(
     private val repository: NoteRepository
 ) {
@@ -19,7 +20,7 @@ class GetNotes(
                 is OrderType.Ascending -> {
                     when (noteOrder) {
                         is NoteOrder.Title ->
-                            notes.sortedBy { it.title.lowercase() }
+                            notes.sortedBy{ it.title.lowercase() }
                         is NoteOrder.Date ->
                             notes.sortedBy { it.timestamp }
 

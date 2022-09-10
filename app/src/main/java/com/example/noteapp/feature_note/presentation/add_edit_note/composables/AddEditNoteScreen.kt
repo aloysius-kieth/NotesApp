@@ -21,10 +21,12 @@ import com.example.noteapp.R
 import com.example.noteapp.feature_note.domain.model.Note
 import com.example.noteapp.feature_note.presentation.add_edit_note.AddEditNoteEvent
 import com.example.noteapp.feature_note.presentation.add_edit_note.AddEditNoteViewModel
+import com.example.noteapp.util.TestTags.TITLE_TEXT_FIELD
 import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
+import com.example.noteapp.util.TestTags.CONTENT_TEXT_FIELD as CONTENT_TEXT_FIELD
 
 @Composable
 @Destination
@@ -122,7 +124,8 @@ fun AddEditNoteScreen(
                 },
                 isHintVisible = titleState.isHintVisible,
                 singleLine = true,
-                textStyle = MaterialTheme.typography.h5
+                textStyle = MaterialTheme.typography.h5,
+                testTag = TITLE_TEXT_FIELD
             )
             Spacer(modifier = Modifier.height(16.dp))
             TransparentHintTextField(
@@ -136,7 +139,8 @@ fun AddEditNoteScreen(
                 },
                 isHintVisible = contentState.isHintVisible,
                 textStyle = MaterialTheme.typography.body1,
-                modifier = Modifier.fillMaxHeight()
+                modifier = Modifier.fillMaxHeight(),
+                testTag = CONTENT_TEXT_FIELD
             )
         }
     }
